@@ -1,0 +1,377 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  block-size: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1200px;
+  block-size: 100%;
+  margin: auto;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  background-color: #1b1919;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 711px 399px; 
+  column-gap: 90px; 
+  align-items: stretch; 
+  width: 100%;
+  max-width: 1200px;
+  height: 493px; 
+}
+
+.result {
+  grid-column: 1;
+}
+
+.content__details {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 493px;
+  position: relative; 
+}
+
+.result__video-container {
+  position: relative; 
+  width: 711px;
+  height: 400px;
+  margin-bottom: 25px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.search-form {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px; 
+  width: 100%;
+}
+
+.search-form__fieldset {
+  border: none;   
+  padding: 0;    
+}
+
+
+.search-form__fieldset:nth-of-type(1) {
+  flex-grow: 1; 
+}
+
+.search-form__fieldset:nth-of-type(2) {
+  flex-shrink: 0; 
+  width: auto;    
+}
+
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 22px; 
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+
+.search-form__fieldset:nth-of-type(1) .search-form__label {
+  width: 100%;
+}
+
+
+.search-form__fieldset:nth-of-type(2) .search-form__label {
+  width: fit-content;
+}
+
+.search-form__textfield {
+  width: 100%; 
+  height: 30px;
+  padding: 0; 
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-stretch: condensed; 
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  appearance: none;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 70%);
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-stretch: condensed;
+}
+
+.search-form__label-text {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-stretch: condensed;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  height: 40px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  flex-shrink: 0;
+}
+
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  transform: scale(0);
+  transition: transform 0.1s ease;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  transform: scale(1);
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__textfield:focus-visible),
+.search-form__label:has(.search-form__checkbox:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(64px, 7vw, 92px); 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  line-height: 0.95; 
+  margin-top: -92px; 
+  margin-bottom: 20px; 
+}
+
+.content__accent {
+  font-family: inherit;
+  color: #555555; 
+}
+
+.content__list-container {
+  height: 310px; 
+  overflow-y: auto; 
+  margin-bottom: 0px; 
+}
+
+.content__list-container .no-scroll{
+  overflow-y: hidden; 
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  gap: 30px; 
+}
+
+.content__list-item {
+  padding: 0 3px; 
+}
+
+.content__card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1; 
+  padding-right: 8px; 
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.content__video-card-description {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2; 
+  color: #FFFFFF;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.content__video-card-thumbnail {
+  width: 180px;  
+  height: 103px;
+  flex-shrink: 0; 
+  object-fit: cover;
+  object-position: center;
+  margin-right: 0px;
+}
+
+.content__card-link_current .content__video-card {
+  background-color: #555555;
+}
+
+.content__card-link:hover .content__video-card-title {
+  text-decoration: underline;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible .content__video-card {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.search-form__submit-button {
+  width: 200px; 
+  height: 40px;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.more-button {
+  width: 395px; 
+  height: 40px;
+  flex-shrink: 0;
+  margin-top: auto; 
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #fff;
+  color: #1b1919; 
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar,
+.content__list-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+.content__list-container::-webkit-scrollbar-track {
+  background: rgb(217 217 217 / 10%);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+.content__list-container::-webkit-scrollbar-thumb {
+  background-color: #D9D9D9;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
